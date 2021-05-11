@@ -11,10 +11,19 @@
 
 <body>
     <main id="vueapp">
-<ul>
-    <li v-for="element in mailList">{{element}}</li>
-</ul>
-     
+
+<button @click="catchData">Load data</button>
+
+    <div v-if="loading === false">
+        <ul >
+            <li v-for="element in printList">{{element}}</li>
+        </ul>
+    </div>
+
+    <div v-else>
+        <h5>Now loading...</h5>
+    </div>  
+
     </main>
  <script src="myScriptEmailList.js"></script>   
 </body>

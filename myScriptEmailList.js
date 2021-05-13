@@ -11,6 +11,11 @@ const app = new Vue(
                 catchData()  {
                  this.loading = true;
 
+                    if(this.mailList.length >= 1){
+                        this.mailList=[];
+                        this.loading = false;        
+                    }
+
                     for(let i =0; i < 10; i++) {                       //ciclo for per ottenere 10 indirizzi
                         axios.get("https://flynn.boolean.careers/exercises/api/random/mail")          
                         .then((resp)=> {
